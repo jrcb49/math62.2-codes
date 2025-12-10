@@ -81,7 +81,7 @@ calcium.aov2 = aov(value~method, data=calcium)
 summary(calcium.aov2)
 summary.lm(calcium.aov2) # testing contrasts
 
-## Comparison Method: LSD Method w/ Bonferroni correction
-#pairwise.t.test(calcium$value, calcium$method, p.adj='b')
+## Comparison Method: Bonferroni approach
+pairwise.t.test(calcium$value, calcium$method, p.adj='b')
 ## Comparison Method: Tukey Method
-#TukeyHSD(calcium.aov)
+TukeyHSD(calcium.aov)
